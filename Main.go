@@ -15,7 +15,7 @@ func main() {
 	folderPtr := flag.String("folder", "", "The base folder to look for")
 	filterPtr := flag.String("filter", "/**/*", "File filter")
 
-	if *regexPtr == "" || *replacementPtr == "" || *folderPtr == "" || *filterPtr == "" {
+	if len(*regexPtr) == 0 || len(*replacementPtr) == 0 || len(*folderPtr) == 0 || len(*filterPtr) == 0 {
 		_, _ = fmt.Fprintf(os.Stderr, "ERROR : One of the required argument missing. fol=%s,fil=%s,reg=%s,rep=%s\n", *folderPtr, *filterPtr, *regexPtr, *replacementPtr)
 		exitAndShowUsage()
 	} else {
